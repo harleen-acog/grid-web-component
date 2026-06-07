@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600&family=Geist:wght@300;400;500;600&display=swap');
+
+duck-grid {
+  --dg-bg:              #ffffff;
+  --dg-bg-subtle:       #fcfcfd;
+  --dg-bg-muted:        #f4f5f7;
+  --dg-bg-toolbar:      #f9fafb;
+  --dg-bg-header:       #fafbfc;
+  --dg-bg-footer:       #f9fafb;
+
+  --dg-border:          #e4e7ec;
+  --dg-border-strong:   #d0d5dd;
+  --dg-border-focus:    #4f46e5;
+  --dg-radius:          8px;
+  --dg-radius-sm:       6px;
+
+  --dg-text:            #1d2939;
+  --dg-text-muted:      #475467;
+  --dg-text-faint:      #98a2b3;
+  --dg-text-header:     #344054;
+  --dg-text-label:      #475467;
+
+  --dg-accent:          #4f46e5;
+  --dg-accent-subtle:   #f5f3ff;
+  --dg-accent-text:     #4338ca;
+  --dg-accent-hover:    #3730a3;
+
+  --dg-num:             #0969da;
+  --dg-date:            #6b21a8;
+  --dg-bool-true:       #065f46;
+  --dg-bool-true-bg:    #ecfdf5;
+  --dg-bool-false:      #991b1b;
+  --dg-bool-false-bg:   #fef2f2;
+  --dg-null:            #98a2b3;
+
+  --dg-font-ui:         'Geist', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --dg-font-mono:       'Geist Mono', 'Cascadia Code', 'Fira Code', ui-monospace, monospace;
+  --dg-font-size:       13px;
+  --dg-font-size-sm:    12px;
+  --dg-font-size-xs:    11px;
+
+  --dg-shadow:          0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.025);
+  --dg-shadow-md:       0 8px 30px rgba(0,0,0,0.06), 0 4px 8px rgba(0,0,0,0.03);
+
+  display:   block;
+  min-width: 0;
+}

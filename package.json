@@ -1,0 +1,32 @@
+{
+  "name": "duck-grid",
+  "version": "0.2.0",
+  "description": "A generic data grid Web Component powered by DuckDB WASM. Accepts any Parquet or CSV file.",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/duck-grid.esm.js",
+      "require": "./dist/duck-grid.cjs.js"
+    },
+    "./themes/light.css": "./themes/light.css",
+    "./themes/dark.css":  "./themes/dark.css"
+  },
+  "files": [
+    "dist",
+    "themes",
+    "types"
+  ],
+  "scripts": {
+    "build":     "vite build",
+    "dev":       "vite build --watch",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": ["web-component", "duckdb", "data-grid", "parquet", "csv", "wasm"],
+  "devDependencies": {
+    "vite": "^5.4.0",
+    "typescript": "^5.5.0",
+    "vitest": "^1.6.0"
+  }
+}

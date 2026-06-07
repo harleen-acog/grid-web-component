@@ -1,0 +1,46 @@
+duck-grid {
+  --dg-bg:              #18181b;
+  --dg-bg-subtle:       #121214;
+  --dg-bg-muted:        #27272a;
+  --dg-bg-toolbar:      #121214;
+  --dg-bg-header:       #1e1e24;
+  --dg-bg-footer:       #121214;
+
+  --dg-border:          #27272a;
+  --dg-border-strong:   #3f3f46;
+  --dg-border-focus:    #6366f1;
+
+  --dg-text:            #f4f4f5;
+  --dg-text-muted:      #a1a1aa;
+  --dg-text-faint:      #52525b;
+  --dg-text-header:     #e4e4e7;
+  --dg-text-label:      #a1a1aa;
+
+  --dg-accent:          #6366f1;
+  --dg-accent-subtle:   rgba(99, 102, 241, 0.08);
+  --dg-accent-text:     #818cf8;
+  --dg-accent-hover:    #4f46e5;
+
+  --dg-num:             #38bdf8;
+  --dg-date:            #c084fc;
+  --dg-bool-true:       #34d399;
+  --dg-bool-true-bg:    rgba(52, 211, 153, 0.08);
+  --dg-bool-false:      #f87171;
+  --dg-bool-false-bg:   rgba(248, 113, 113, 0.08);
+  --dg-null:            #52525b;
+
+  --dg-fast:            #34d399;
+  --dg-med:             #fbbf24;
+  --dg-slow:            #f87171;
+
+  --dg-row-hover:       rgba(255, 255, 255, 0.025);
+  --dg-row-stripe:      rgba(255, 255, 255, 0.01);
+  --dg-row-selected:    rgba(99, 102, 241, 0.08);
+}
+
+.dg-filter-icon-btn:hover {
+  background:      rgba(255,255,255,0.08) !important;
+}
+.dg-popover-input, .dg-popover-select {
+  background:      #18181b;
+}
