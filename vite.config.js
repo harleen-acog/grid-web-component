@@ -10,7 +10,13 @@ export default defineConfig({
         `duck-grid.${format === "es" ? "esm" : "cjs"}.js`,
     },
     rollupOptions: {
-      external: [],
+      external: ["@duckdb/duckdb-wasm"],
+      output: {
+        // tells bundlers the global name when used via <script> tag (UMD/IIFE)
+        globals: {
+          "@duckdb/duckdb-wasm": "DuckDB",
+        },
+      },
     },
     sourcemap: true,
   },
