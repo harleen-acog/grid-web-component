@@ -84,3 +84,14 @@ declare global {
     "duck-grid": DuckGridElement;
   }
 }
+
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      "duck-grid": DuckGridAttributes & {
+        children?: any;
+      };
+    }
+  }
+}
+
