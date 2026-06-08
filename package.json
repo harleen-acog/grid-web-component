@@ -1,5 +1,5 @@
 {
-  "name": "duck-grid",
+  "name": "@aganitha/duck-grid",
   "version": "0.2.0",
   "description": "A generic data grid Web Component powered by DuckDB WASM. Accepts any Parquet or CSV file.",
   "type": "module",
