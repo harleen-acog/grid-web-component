@@ -1,6 +1,6 @@
 {
   "name": "@aganitha/duck-grid",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "description": "A generic data grid Web Component powered by DuckDB WASM. Accepts any Parquet or CSV file.",
   "type": "module",
   "main": "./dist/duck-grid.cjs.js",
