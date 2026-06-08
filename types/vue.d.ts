@@ -1,7 +1,7 @@
-import type { DuckGridAttributes } from "./index";
+import type { DuckGridElement } from "./index";
 
 declare module "vue" {
   interface GlobalComponents {
-    "duck-grid": DuckGridAttributes;
+    "duck-grid": DuckGridElement;
   }
 }

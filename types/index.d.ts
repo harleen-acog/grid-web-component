@@ -1,12 +1,16 @@
+export declare class DuckGridElement extends HTMLElement {
+  src?: string;
+  "page-size"?: string | number;
+  theme?: "light" | "dark";
+  height?: string;
+  static readonly observedAttributes: string[];
+}
+
 export interface DuckGridAttributes {
   src?: string;
   "page-size"?: string | number;
   theme?: "light" | "dark";
   height?: string;
-}
-
-export declare class DuckGridElement extends HTMLElement {
-  static readonly observedAttributes: string[];
 }
 
 export function applyTheme(css: string): void;
