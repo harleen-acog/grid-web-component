@@ -23,7 +23,7 @@ A generic data grid Web Component powered by DuckDB WASM. Accepts any Parquet or
 ### React / Next.js
 
 ```tsx
-'use client';
+'use client'; //for next.js
 import 'duck-grid';
 
 export default function DataPage() {
@@ -33,14 +33,8 @@ export default function DataPage() {
 
 For Next.js, wrap in `dynamic(() => import('duck-grid'), { ssr: false })` because DuckDB WASM can't run server-side.
 
-For JSX type support:
 
-```ts
-// src/env.d.ts
-/// <reference types="duck-grid/react" />
-```
-
-### Vue
+<!-- ### Vue
 
 ```vue
 <script setup>
@@ -50,9 +44,9 @@ import 'duck-grid';
 <template>
   <duck-grid src="/data/sales.csv" page-size="100" />
 </template>
-```
+``` -->
 
-For Vue type support:
+<!-- For Vue type support:
 
 ```ts
 // src/env.d.ts
@@ -64,7 +58,7 @@ If using Vite, add to `vite.config.ts`:
 ```ts
 compilerOptions: {
   isCustomElement: tag => tag === 'duck-grid'
-}
+} -->
 ```
 
 ### Astro
@@ -76,10 +70,6 @@ compilerOptions: {
 
 <duck-grid src="/data/sales.parquet" />
 ```
-
-### Svelte
-
-Works natively — Svelte passes unknown elements to the browser as-is.
 
 ---
 

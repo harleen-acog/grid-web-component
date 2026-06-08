@@ -83,15 +83,25 @@ declare global {
   interface HTMLElementTagNameMap {
     "duck-grid": DuckGridElement;
   }
+
 }
 
-declare global {
+// Covers React 17+ automatic transform
+declare module "react" {
   namespace JSX {
     interface IntrinsicElements {
-      "duck-grid": DuckGridAttributes & {
-        children?: any;
-      };
+      "duck-grid": DuckGridAttributes & { children?: React.ReactNode };
     }
   }
 }
+
+// Covers legacy React and Vue
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      "duck-grid": DuckGridAttributes & { children?: any };
+    }
+  }
+}
+
 
