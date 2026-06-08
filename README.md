@@ -8,64 +8,156 @@ A generic data grid Web Component powered by DuckDB WASM. Accepts any Parquet or
 
 ---
 
+## Installation
+
+```bash
+npm install @aganitha/duck-grid @duckdb/duckdb-wasm
+```
+
+---
+
 ## Usage
 
 ### Plain HTML
 
+No build step required — import directly from a CDN or your bundle:
+
 ```html
 <script type="module">
-  import 'duck-grid';
+  import '@aganitha/duck-grid';
 </script>
 
 <duck-grid src="/data/sales.csv" page-size="50" theme="dark"></duck-grid>
 ```
 
-### React / Next.js
+---
+
+### React
+
+```bash
+npm install @aganitha/duck-grid @duckdb/duckdb-wasm
+```
 
 ```tsx
-'use client'; //for next.js
-import 'duck-grid';
+import '@aganitha/duck-grid';
 
 export default function DataPage() {
   return <duck-grid src="/data/sales.parquet" page-size="100" />;
 }
 ```
 
-For Next.js, wrap in `dynamic(() => import('duck-grid'), { ssr: false })` because DuckDB WASM can't run server-side.
+<!-- For TypeScript, add type support in your `src/globals.d.ts` (or any `.d.ts` file):
 
+```ts
+/// <reference types="@aganitha/duck-grid/react" />
+```
+
+This gives you autocomplete and type checking for `<duck-grid>` in JSX. -->
+
+---
+
+### Next.js
+
+DuckDB WASM requires browser APIs and cannot run server-side. You need to load the component client-side only.
+
+```bash
+npm install @aganitha/duck-grid @duckdb/duckdb-wasm
+```
+
+**Step 1** — Create a client wrapper:
+
+```tsx
+// components/DuckGridClient.tsx
+'use client';
+
+import '@aganitha/duck-grid';
+
+export default function DuckGridClient() {
+  return <duck-grid src="/data/sales.parquet" page-size="100" />; //file is in public folder here
+}
+```
+
+**Step 2** — Load it dynamically with `ssr: false` in your page:
+
+```tsx
+// app/page.tsx
+import dynamic from 'next/dynamic';
+
+const DuckGridClient = dynamic(() => import('../components/DuckGridClient'), {
+  ssr: false,
+  loading: () => <p>Loading data grid…</p>,
+});
+
+export default function Page() {
+  return <DuckGridClient />;
+}
+```
+
+> **Why two files?** `dynamic` with `ssr: false` only skips SSR for the dynamically imported module. If the import is in the same file as the page, Next.js still evaluates it on the server. Splitting into two files ensures `@aganitha/duck-grid` never runs in Node.js.
+
+<!-- For TypeScript, add type support in your `types/globals.d.ts`:
+
+```ts
+/// <reference types="@aganitha/duck-grid/react" />
+``` -->
+
+**File serving** — place your data files in the `public/` folder so Next.js serves them:
+
+```
+my-app/
+  public/
+    data/
+      sales.parquet   ← accessible at /data/sales.parquet
+```
+
+---
 
 <!-- ### Vue
 
+```bash
+npm install @aganitha/duck-grid @duckdb/duckdb-wasm
+```
+
 ```vue
 <script setup>
-import 'duck-grid';
+import '@aganitha/duck-grid';
 </script>
 
 <template>
   <duck-grid src="/data/sales.csv" page-size="100" />
 </template>
-``` -->
-
-<!-- For Vue type support:
-
-```ts
-// src/env.d.ts
-/// <reference types="duck-grid/vue" />
 ```
 
-If using Vite, add to `vite.config.ts`:
+Tell the Vue compiler not to treat `duck-grid` as a missing component:
 
 ```ts
-compilerOptions: {
-  isCustomElement: tag => tag === 'duck-grid'
-} -->
+// vite.config.ts
+export default defineConfig({
+  plugins: [
+    vue({
+      template: {
+        compilerOptions: {
+          isCustomElement: (tag) => tag === 'duck-grid',
+        },
+      },
+    }),
+  ],
+});
 ```
+
+For TypeScript type support, add to your `src/env.d.ts`:
+
+```ts
+/// <reference types="@aganitha/duck-grid/vue" />
+```
+
+--- -->
 
 ### Astro
 
 ```astro
 <script>
-  import 'duck-grid';
+  import '@aganitha/duck-grid';
 </script>
 
 <duck-grid src="/data/sales.parquet" />
@@ -98,7 +190,7 @@ duck-grid {
 Or apply the built-in dark theme programmatically:
 
 ```js
-import { applyTheme, DARK_THEME } from 'duck-grid';
+import { applyTheme, DARK_THEME } from '@aganitha/duck-grid';
 applyTheme(DARK_THEME);
 ```
 
