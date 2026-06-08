@@ -80,9 +80,3 @@ declare global {
     "duck-grid": DuckGridElement;
   }
 }
-
-declare module "vue" {
-  interface GlobalComponents {
-    "duck-grid": DuckGridAttributes;
-  }
-}
