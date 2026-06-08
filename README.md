@@ -1,17 +1,9 @@
-# duck-grid
+# DuckGrid
 
 A generic data grid Web Component powered by DuckDB WASM. Accepts any Parquet or CSV file — columns, filters, and search are all discovered at runtime from the actual schema.
 
 ```html
 <duck-grid src="/data/sales.parquet" page-size="100"></duck-grid>
-```
-
----
-
-## Install
-
-```bash
-npm install duck-grid
 ```
 
 ---
